@@ -7,7 +7,6 @@ import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Data
@@ -16,7 +15,6 @@ import java.time.LocalDateTime;
 @Entity
 @Table(
         name = "user_table",
-        schema = "jpa_demo",
         uniqueConstraints = {
                 @UniqueConstraint(
                         name = "unique_names",
@@ -25,14 +23,13 @@ import java.time.LocalDateTime;
         }
 )
 
-public class user {
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID", nullable = false)
-    private int id;
+    private long id;
     private String username;
     private String email;
-    private long number;
     @CreationTimestamp
     private LocalDateTime dateCreated;
     @UpdateTimestamp
