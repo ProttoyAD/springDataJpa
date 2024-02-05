@@ -51,23 +51,24 @@ class SpringDataJpaApplicationTests {
 		userRepository.saveAll(List.of(user3,user4));
 
 
-		List<User> allUser=userRepository.findAll();
-		System.out.println("All names--------------");
-		allUser.forEach(System.out::println);
+//		List<User> allUser=userRepository.findAll();
+//		System.out.println("All names--------------");
+//		allUser.forEach(System.out::println);
+//		long count=userRepository.count();
 
 
 
-		allUser.forEach(s->{
-//			System.out.println("Username:");
-			System.out.println("Username: "+s.getUsername());
-		});
-
-//		To delete specified object
-		userRepository.deleteAll(List.of(user3,user4));
-//		To delete all
-		userRepository.deleteAll();
-		userRepository.delete(user3);
-		userRepository.deleteById(1L);
+//		allUser.forEach(s->{
+////			System.out.println("Username:");
+//			System.out.println("Username: "+s.getUsername());
+//		});
+//
+////		To delete specified object
+//		userRepository.deleteAll(List.of(user3,user4));
+////		To delete all
+//		userRepository.deleteAll();
+//		userRepository.delete(user3);
+//		userRepository.deleteById(1L);
 	}
 
 }

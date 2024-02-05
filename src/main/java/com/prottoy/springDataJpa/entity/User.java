@@ -27,7 +27,7 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID", nullable = false)
-    private long id;
+    private Long id;
     private String username;
     private String email;
     @CreationTimestamp
