@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
+import java.util.stream.Stream;
 
 @SpringBootTest
 class SpringDataJpaApplicationTests {
@@ -50,7 +51,23 @@ class SpringDataJpaApplicationTests {
 		userRepository.saveAll(List.of(user3,user4));
 
 
+		List<User> allUser=userRepository.findAll();
+		System.out.println("All names--------------");
+		allUser.forEach(System.out::println);
 
+
+
+		allUser.forEach(s->{
+//			System.out.println("Username:");
+			System.out.println("Username: "+s.getUsername());
+		});
+
+//		To delete specified object
+		userRepository.deleteAll(List.of(user3,user4));
+//		To delete all
+		userRepository.deleteAll();
+		userRepository.delete(user3);
+		userRepository.deleteById(1L);
 	}
 
 }
